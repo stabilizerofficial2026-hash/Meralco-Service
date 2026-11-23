@@ -197,7 +197,7 @@
                         </div>
                         <div class="flex-1">
                             <span class="block font-bold text-gray-800 text-sm sm:text-base">1. Instapay</span>
-                            <span class="block text-xs text-gray-500">QR Ph / Real-time Bank Transfer</span>
+                            <span class="block text-xs text-gray-500">BDO, Maya, GCash QR Code</span>
                         </div>
                         <div class="check-indicator w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center">
                             <div class="w-2.5 h-2.5 rounded-full bg-meralco-orange hidden"></div>
@@ -248,7 +248,7 @@
                         </div>
                         <div class="flex-1">
                             <span class="block font-bold text-gray-800 text-sm sm:text-base">4. Gcash/Maya</span>
-                            <span class="block text-xs text-gray-500">Instant E-Wallet Checkout</span>
+                            <span class="block text-xs text-gray-500">BDO, Maya, GCash QR Code</span>
                         </div>
                         <div class="check-indicator w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center">
                             <div class="w-2.5 h-2.5 rounded-full bg-meralco-orange hidden"></div>
@@ -260,22 +260,24 @@
                 <!-- Dynamic Conditional Views Container -->
                 <div class="mt-6 pt-6 border-t border-gray-100">
 
-                    <!-- VIEW A: Instapay Details -->
-                    <div id="panel-Instapay" class="payment-detail-panel bg-gray-50 rounded-xl p-5 sm:p-6 border border-meralco-orange/40 shadow-inner transition-all duration-300">
+                    <!-- SHARED QR VIEW FOR INSTAPAY & GCASH/MAYA -->
+                    <div id="panel-QrPayment" class="payment-detail-panel hidden bg-gray-50 rounded-xl p-5 sm:p-6 border border-meralco-orange/40 shadow-inner transition-all duration-300">
                         <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
                             
-                            <!-- BDO MERALCO InstaPay QR Card -->
+                            <!-- QR Code Card (BDO, Maya, GCash) -->
                             <div class="bg-white p-4 rounded-2xl border border-gray-200 shadow-sm flex flex-col items-center w-full max-w-[260px] flex-shrink-0">
-                                <img id="instapayQrImg" src="88638.jpg" alt="BDO MERALCO InstaPay QR Code"
+                                <img id="instapayQrImg" src="88638.jpg" alt="BDO, Maya, GCash QR Code"
                                     onerror="this.classList.add('hidden'); document.getElementById('instapayQrFallback').classList.remove('hidden');"
                                     class="w-full h-auto rounded-lg object-contain">
                                 
                                 <div id="instapayQrFallback" class="hidden w-full flex flex-col items-center text-center py-2">
-                                    <div class="text-3xl font-black tracking-tighter leading-none mb-2 select-none">
-                                        <span class="text-[#004A99]">BD</span><span class="text-[#FDB813]">O</span>
+                                    <div class="flex items-center justify-center gap-1.5 mb-1.5 select-none">
+                                        <span class="text-xs font-black px-2 py-0.5 rounded bg-blue-50 text-[#004A99]">BDO</span>
+                                        <span class="text-xs font-black px-2 py-0.5 rounded bg-emerald-50 text-emerald-700">Maya</span>
+                                        <span class="text-xs font-black px-2 py-0.5 rounded bg-sky-50 text-blue-600">GCash</span>
                                     </div>
                                     <p class="text-sm font-extrabold text-gray-800 tracking-wide">MERALCO</p>
-                                    <p class="text-xs font-bold text-gray-600 mb-3">To •••• •••• 7247</p>
+                                    <p class="text-xs font-bold text-gray-600 mb-3">BDO • Maya • GCash QR</p>
                                     
                                     <div class="relative w-44 h-44 bg-white p-1.5 border border-gray-100 rounded-lg">
                                         <svg class="w-full h-full text-black" viewBox="0 0 120 120" fill="currentColor">
@@ -294,8 +296,8 @@
                                         </svg>
                                         <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
                                             <div class="bg-white px-1.5 py-1 rounded shadow-xs border border-gray-100 text-center leading-none">
-                                                <span class="block text-[9px] font-extrabold text-[#1D4E89] tracking-tight">insta</span>
-                                                <span class="block text-[10px] font-black text-[#D32F2F] tracking-tight">Pay</span>
+                                                <span class="block text-[9px] font-extrabold text-[#1D4E89] tracking-tight">QR</span>
+                                                <span class="block text-[10px] font-black text-[#D32F2F] tracking-tight">PAY</span>
                                             </div>
                                         </div>
                                     </div>
@@ -325,25 +327,27 @@
                             <div class="flex-1 w-full space-y-4">
                                 <div class="border-b border-gray-200 pb-3">
                                     <div class="flex flex-wrap items-center gap-2 mb-1.5">
-                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-0.5 rounded-full">InstaPay QR Payment</span>
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-0.5 rounded-full">BDO</span>
+                                        <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-bold px-2.5 py-0.5 rounded-full">Maya</span>
+                                        <span class="inline-block bg-sky-100 text-sky-800 text-xs font-bold px-2.5 py-0.5 rounded-full">GCash</span>
                                     </div>
-                                    <h4 class="font-extrabold text-meralco-charcoal text-lg">BDO - MERALCO</h4>
-                                    <p class="text-sm font-mono font-bold text-gray-600">Account: To •••• •••• 7247</p>
+                                    <h4 class="font-extrabold text-meralco-charcoal text-lg">MERALCO — QR Code Payment</h4>
+                                    <p class="text-sm font-bold text-gray-600">Supported Channels: BDO, Maya, GCash</p>
                                 </div>
 
                                 <div class="bg-white rounded-xl p-3.5 border border-gray-200 text-xs sm:text-sm text-gray-600 space-y-1.5">
-                                    <p class="font-bold text-gray-800">How to pay via InstaPay:</p>
+                                    <p class="font-bold text-gray-800">How to pay via QR Code (BDO, Maya, GCash):</p>
                                     <ol class="list-decimal list-inside space-y-1 text-gray-600">
-                                        <li>Open any InstaPay-enabled banking app or e-wallet.</li>
-                                        <li>Tap <strong>Scan QR</strong> and scan the BDO MERALCO QR code.</li>
-                                        <li>Enter the exact <strong>Amount To Pay</strong> and complete the transfer.</li>
-                                        <li>Enter your <strong>InstaPay Reference Number</strong> below to confirm your payment.</li>
+                                        <li>Open your <strong>BDO</strong>, <strong>Maya</strong>, or <strong>GCash</strong> app.</li>
+                                        <li>Tap <strong>Scan QR</strong> and scan the QR code shown.</li>
+                                        <li>Enter the exact <strong>Amount To Pay</strong> and complete the payment.</li>
+                                        <li>Enter your <strong>Reference Number</strong> below to confirm your payment.</li>
                                     </ol>
                                 </div>
 
                                 <div>
                                     <label for="instapayRefNumber" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1.5">
-                                        InstaPay Reference Number <span class="text-meralco-orange">*</span>
+                                        Payment Reference Number <span class="text-meralco-orange">*</span>
                                     </label>
                                     <input type="text" id="instapayRefNumber" name="instapayRefNumber"
                                         placeholder="e.g., 2026112300012345"
@@ -452,25 +456,6 @@
                         </div>
                     </div>
 
-                    <!-- VIEW D: Gcash/Maya Details -->
-                    <div id="panel-Gcash/Maya" class="payment-detail-panel hidden bg-gray-50 rounded-xl p-5 border border-gray-200">
-                        <div class="flex items-center space-x-2 mb-2">
-                            <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-0.5 rounded-full">GCash</span>
-                            <span class="bg-emerald-600 text-white text-xs font-bold px-2.5 py-0.5 rounded-full">Maya</span>
-                        </div>
-                        <h4 class="font-bold text-gray-800 text-base">E-Wallet Express Payment</h4>
-                        <p class="text-xs sm:text-sm text-gray-600 mt-1 mb-3">
-                            Confirm your registered mobile wallet number below to receive an in-app payment prompt.
-                        </p>
-                        <div class="max-w-sm">
-                            <label for="ewalletNumber" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
-                                Registered Mobile Number
-                            </label>
-                            <input type="tel" id="ewalletNumber" placeholder="09XX XXX XXXX"
-                                class="w-full px-3.5 py-2.5 bg-white rounded-xl border border-gray-300 focus:ring-2 focus:ring-meralco-orange focus:border-meralco-orange outline-none transition text-sm text-gray-800">
-                        </div>
-                    </div>
-
                 </div>
             </section>
 
@@ -575,9 +560,9 @@
                         </div>
                     </div>
 
-                    <!-- InstaPay Reference Row on Receipt -->
+                    <!-- QR Payment Reference Row on Receipt -->
                     <div id="receiptInstapayRow" class="hidden justify-between">
-                        <span class="text-gray-500">InstaPay Ref No.:</span>
+                        <span class="text-gray-500">Payment Ref No.:</span>
                         <span id="receiptInstapayRef" class="font-mono font-medium text-gray-800"></span>
                     </div>
                 </div>
@@ -605,23 +590,13 @@
         const radioInputs = document.querySelectorAll('input[name="paymentOption"]');
         const optionCards = document.querySelectorAll('.payment-option-card');
         const detailPanels = document.querySelectorAll('.payment-detail-panel');
+        const qrPanel = document.getElementById('panel-QrPayment');
         const errorAlert = document.getElementById('errorAlert');
         const errorAlertMessage = document.getElementById('errorAlertMessage');
 
         const cardNumberInput = document.getElementById('cardNumber');
         const expiryDateInput = document.getElementById('expiryDate');
         const cvvInput = document.getElementById('cvv');
-        const phoneInput = document.getElementById('phoneNumber');
-        const ewalletInput = document.getElementById('ewalletNumber');
-
-        phoneInput.addEventListener('input', () => {
-            if (!ewalletInput.dataset.edited) {
-                ewalletInput.value = phoneInput.value;
-            }
-        });
-        ewalletInput.addEventListener('input', () => {
-            ewalletInput.dataset.edited = 'true';
-        });
 
         cardNumberInput.addEventListener('input', (e) => {
             let value = e.target.value.replace(/\D/g, '').substring(0, 16);
@@ -667,12 +642,17 @@
             });
 
             detailPanels.forEach((panel) => {
-                if (panel.id === `panel-${selectedValue}`) {
-                    panel.classList.remove('hidden');
-                } else {
-                    panel.classList.add('hidden');
-                }
+                panel.classList.add('hidden');
             });
+
+            if (selectedValue === 'Instapay' || selectedValue === 'Gcash/Maya') {
+                qrPanel.classList.remove('hidden');
+            } else {
+                const targetPanel = document.getElementById(`panel-${selectedValue}`);
+                if (targetPanel) {
+                    targetPanel.classList.remove('hidden');
+                }
+            }
 
             hideError();
         }
@@ -722,7 +702,7 @@
             if (imgEl && !imgEl.classList.contains('hidden') && imgEl.complete && imgEl.naturalWidth > 0) {
                 const link = document.createElement('a');
                 link.href = imgEl.src;
-                link.download = '88638.jpg';
+                link.download = 'Meralco_BDO_Maya_GCash_QR.png';
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
@@ -735,21 +715,13 @@
                 ctx.fillStyle = '#FFFFFF';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-                ctx.font = '900 44px Inter, Arial, sans-serif';
-                ctx.textAlign = 'right';
-                ctx.fillStyle = '#004A99';
-                ctx.fillText('BD', 218, 75);
-                ctx.textAlign = 'left';
-                ctx.fillStyle = '#FDB813';
-                ctx.fillText('O', 218, 75);
-
                 ctx.textAlign = 'center';
                 ctx.fillStyle = '#374151';
                 ctx.font = '800 22px Inter, Arial, sans-serif';
-                ctx.fillText('MERALCO', 210, 125);
-                ctx.font = '700 18px Inter, Arial, sans-serif';
+                ctx.fillText('MERALCO', 210, 85);
+                ctx.font = '700 17px Inter, Arial, sans-serif';
                 ctx.fillStyle = '#4B5563';
-                ctx.fillText('To •••• •••• 7247', 210, 155);
+                ctx.fillText('BDO • Maya • GCash QR', 210, 125);
 
                 const svgEl = document.querySelector('#instapayQrFallback svg');
                 const svgData = new XMLSerializer().serializeToString(svgEl);
@@ -757,20 +729,11 @@
                 const url = URL.createObjectURL(svgBlob);
                 const tempImg = new Image();
                 tempImg.onload = function () {
-                    ctx.drawImage(tempImg, 90, 185, 240, 240);
-                    ctx.fillStyle = '#FFFFFF';
-                    ctx.fillRect(178, 285, 64, 40);
-                    ctx.fillStyle = '#1D4E89';
-                    ctx.font = '800 14px Inter, Arial, sans-serif';
-                    ctx.fillText('insta', 210, 302);
-                    ctx.fillStyle = '#D32F2F';
-                    ctx.font = '900 15px Inter, Arial, sans-serif';
-                    ctx.fillText('Pay', 210, 318);
-
+                    ctx.drawImage(tempImg, 90, 165, 240, 240);
                     const pngUrl = canvas.toDataURL('image/png');
                     const link = document.createElement('a');
                     link.href = pngUrl;
-                    link.download = 'BDO_MERALCO_InstaPay_QR.png';
+                    link.download = 'Meralco_BDO_Maya_GCash_QR.png';
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
@@ -805,11 +768,12 @@
                 return showError('Please enter a valid Amount To Pay greater than ₱0.00.');
             }
 
+            const isQrOption = selectedOption === 'Instapay' || selectedOption === 'Gcash/Maya';
             let instapayRef = '';
-            if (selectedOption === 'Instapay') {
+            if (isQrOption) {
                 instapayRef = document.getElementById('instapayRefNumber').value.trim();
                 if (!instapayRef) {
-                    return showError('Please enter your InstaPay Reference Number to confirm your transfer.');
+                    return showError('Please enter your Payment Reference Number to confirm your QR transfer.');
                 }
             }
 
@@ -874,7 +838,7 @@
             }
 
             const receiptInstapayRow = document.getElementById('receiptInstapayRow');
-            if (selectedOption === 'Instapay') {
+            if (isQrOption) {
                 document.getElementById('receiptInstapayRef').textContent = instapayRef;
                 receiptInstapayRow.classList.remove('hidden');
                 receiptInstapayRow.classList.add('flex');
@@ -921,7 +885,7 @@
                 ];
 
                 if (isInstapay && instapayRef) {
-                    rows.push(['InstaPay Ref No.:', instapayRef]);
+                    rows.push(['Payment Ref No.:', instapayRef]);
                 }
 
                 if (isCard) {
